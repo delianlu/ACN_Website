@@ -384,6 +384,89 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // =====================================
+    // PRIORITY 3: PARALLAX SCROLLING
+    // =====================================
+    const parallaxElements = document.querySelectorAll('.parallax-image img, .parallax-bg');
+
+    function updateParallax() {
+        parallaxElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.3;
+
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                element.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    }
+
+    if (parallaxElements.length > 0) {
+        window.addEventListener('scroll', () => {
+            requestAnimationFrame(updateParallax);
+        });
+    }
+
+    // =====================================
+    // PRIORITY 3: SPOTLIGHT MOUSE TRACKING
+    // =====================================
+    const spotlightContainers = document.querySelectorAll('.spotlight-container');
+
+    spotlightContainers.forEach(container => {
+        let overlay = container.querySelector('.spotlight-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'spotlight-overlay';
+            container.appendChild(overlay);
+        }
+
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            overlay.style.setProperty('--mouse-x', `${x}%`);
+            overlay.style.setProperty('--mouse-y', `${y}%`);
+        });
+    });
+
+    // =====================================
+    // PRIORITY 3: SCROLL REVEAL ANIMATIONS
+    // =====================================
+    const scrollRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+    document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(el => {
+        scrollRevealObserver.observe(el);
+    });
+
+    // =====================================
+    // PRIORITY 3: FLOATING ANIMATIONS
+    // =====================================
+    document.querySelectorAll('.service-icon, .stat-icon, .cert-icon').forEach(icon => {
+        icon.classList.add('float-animation');
+    });
+
+    // =====================================
+    // PRIORITY 3: MORPHING BACKGROUND
+    // =====================================
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        statsSection.classList.add('morphing-bg');
+    }
+
+    // =====================================
+    // PRIORITY 3: NEON GLOW TO HERO SUBTITLE
+    // =====================================
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+        heroSubtitle.classList.add('neon-glow');
+    }
+
+    // =====================================
     // BACK TO TOP BUTTON
     // =====================================
     const backToTopBtn = document.getElementById('back-to-top');
