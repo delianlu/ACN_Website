@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACN Engineering - Home</title>
+    <title>ACN Engineering Co.</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -23,78 +23,154 @@
                     <span></span>
                 </button>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Engineering Excellence for the Future</h1>
-                <p class="hero-subtitle">Innovative solutions for the Fourth Industrial Revolution</p>
-                <div class="hero-buttons">
-                    <a href="about.html" class="btn btn-primary">Learn More</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                <h1 class="hero-title">ACN COLLABORATES WITH CLIENTS TO SOLVE COMPLEX CHALLENGES AND DEVELOP LEGACIES</h1>
+                <p class="hero-subtitle">ACN specializes in technically demanding engineering projects for a wide variety of sustainable design, high-rise buildings, general contracting, construction management, as well as renewable energy plants, power generation, and electrical transmission and distribution lines.</p>
+                <p class="hero-text">We offer a multidisciplinary approach and expertise to ensure the success of every project we run with our clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop" alt="Engineering team" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-heading">ABOUT</h2>
+                    <p>ACN Engineering Co. has been involved in technically demanding tasks for a wide variety of engineering projects since its establishment. ACN has a wealth of industry experience on a global scale in addition to the knowledge and experience of its management team. The main operating markets include of Turkey, the Gulf region, Eastern Europe, Sub-Saharan Africa, and Central and South Asia. The company is confident in its capacity to complete projects, including high-rise buildings, road and bridge construction projects, dry ports, railroads, hydroelectric power plants, industrial facilities, power distribution networks, water distribution systems and environmental projects.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Services Section -->
+    <section id="services" class="services-section">
         <div class="container">
-            <h2 class="section-title">Why Choose ACN Engineering</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
+            <h2 class="section-title">SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?w=600&h=400&fit=crop" alt="Civil Construction" loading="lazy">
                     </div>
-                    <h3>Expert Team</h3>
-                    <p>Highly-skilled engineers with years of expertise and technical training</p>
+                    <div class="service-content">
+                        <h3>Civil Construction</h3>
+                        <p>The highest level of quality, safety, efficiency, and innovation is guaranteed on your projects by our comprehensive suite of construction services.</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1625482500773-178f4c40d082?w=600&h=400&fit=crop" alt="Mining and Mineral Processing" loading="lazy">
                     </div>
-                    <h3>Innovation</h3>
-                    <p>Creating innovative solutions to real problems our clients face</p>
+                    <div class="service-content">
+                        <h3>Mining and Mineral Processing</h3>
+                        <p>We provide high-efficiency, low-cost technology solutions for mining. We help mining leaders uncover prospects and increase performance.</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=400&fit=crop" alt="Energy" loading="lazy">
                     </div>
-                    <h3>Global Reach</h3>
-                    <p>Multinational company with focus on engineering and technical services</p>
+                    <div class="service-content">
+                        <h3>Energy</h3>
+                        <p>Every renewable energy project has the potential to change the world. Clean energy development allows corporations and local governments to build a bright future for all.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Start Your Project?</h2>
-                <p>Join us and be behind the work we do, the challenges we address, and the mark we make on the industry.</p>
-                <a href="contact.html" class="btn btn-light">Get In Touch</a>
+            <h2 class="section-title">PROJECTS</h2>
+            <div class="projects-intro">
+                <p>ACN aims to investigate all potential options on a worldwide scale. We collaborate with clients to tackle their most complex challenges and pioneer innovative solutions that have a positive, long-term impact by standing at the front of construction for important sectors through our strength, determination, and strong will. Moving forward, we will make every effort to become a global leader by acquiring advanced technologies, diversifying abroad markets, and pursuing green construction.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=600&fit=crop" alt="Project 1" loading="lazy">
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=600&fit=crop" alt="Project 2" loading="lazy">
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=600&h=600&fit=crop" alt="Project 3" loading="lazy">
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop" alt="Project 4" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">CONTACT</h2>
+
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-area">
+                    <h3 class="contact-subheading">Inquiries</h3>
+                    <p class="contact-description">Please complete the following form if you have any requests, queries, or comments</p>
+
+                    <div id="form-message" class="form-message"></div>
+
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email *" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject *" required>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="6" placeholder="Message *" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-area">
+                    <h3 class="contact-subheading">Contact Us</h3>
+
+                    <div class="contact-info-item">
+                        <h4>Head Office</h4>
+                        <p>Esentepe Mahallesi Arya Plaza No:17<br>Istanbul/Türkiye</p>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <h4>Employment</h4>
+                        <p>To apply for a job with ACN Engineering, please send a cover letter together with your C.V. to: <a href="mailto:contact@acneng.com">contact@acneng.com</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -104,26 +180,27 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>ACN Engineering</h3>
-                    <p>Engineering excellence for the Fourth Industrial Revolution</p>
+                    <h3>ACN Engineering Co.</h3>
+                    <p>Engineering excellence for sustainable development</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: info@acnengineering.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Email: contact@acneng.com</p>
+                    <p>Esentepe Mahallesi Arya Plaza No:17<br>Istanbul/Türkiye</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 ACN Engineering. All rights reserved.</p>
+                <p>&copy; 2025 ACN Engineering Co. All rights reserved.</p>
             </div>
         </div>
     </footer>
