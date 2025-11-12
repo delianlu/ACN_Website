@@ -1,4 +1,19 @@
 // =====================================
+// PRIORITY 2: PAGE LOADER
+// =====================================
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('fade-out');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }, 500);
+    }
+});
+
+// =====================================
 // PRIORITY 1: SCROLL PROGRESS BAR
 // =====================================
 const scrollProgress = document.createElement('div');
@@ -319,6 +334,53 @@ document.addEventListener('DOMContentLoaded', function() {
         if (index % 2 === 0) { // Every other title gets gradient
             title.classList.add('gradient-text');
         }
+    });
+
+    // =====================================
+    // PRIORITY 2: GRADIENT BORDERS ON CARDS
+    // =====================================
+    document.querySelectorAll('.service-card, .stat-card, .cert-card, .testimonial-card, .project-card').forEach(card => {
+        card.classList.add('gradient-border');
+    });
+
+    // =====================================
+    // PRIORITY 2: TEXT UNDERLINE DRAW ANIMATION
+    // =====================================
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.classList.add('draw-underline');
+    });
+
+    // =====================================
+    // PRIORITY 2: STAGGERED GRID ANIMATIONS
+    // =====================================
+    // Apply to service cards
+    document.querySelectorAll('.services-grid .service-card').forEach((card, index) => {
+        card.classList.add('stagger-item');
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // Apply to stat cards
+    document.querySelectorAll('.stats-section .stat-card').forEach((card, index) => {
+        card.classList.add('stagger-item');
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // Apply to testimonial cards
+    document.querySelectorAll('.testimonials-section .testimonial-card').forEach((card, index) => {
+        card.classList.add('stagger-item');
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // Apply to certification cards
+    document.querySelectorAll('.certifications-section .cert-card').forEach((card, index) => {
+        card.classList.add('stagger-item');
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // Apply to project cards
+    document.querySelectorAll('.projects-section .project-card').forEach((card, index) => {
+        card.classList.add('stagger-item');
+        card.style.animationDelay = `${index * 0.15}s`;
     });
 
     // =====================================
