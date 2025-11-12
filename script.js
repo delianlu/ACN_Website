@@ -1,4 +1,6 @@
-// Mobile Menu Toggle
+// =====================================
+// MOBILE MENU TOGGLE
+// =====================================
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -48,7 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scrolling for anchor links
+    // =====================================
+    // SMOOTH SCROLLING FOR ANCHOR LINKS
+    // =====================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -73,7 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Update active nav link on scroll
+    // =====================================
+    // UPDATE ACTIVE NAV LINK ON SCROLL
+    // =====================================
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
@@ -98,13 +104,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveLink);
 
-    // Contact Form Submission
+    // =====================================
+    // ANIMATED COUNTER FOR STATISTICS
+    // =====================================
+    const stats = document.querySelectorAll('.stat-number');
+    let hasAnimated = false;
+
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                element.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target + '+';
+            }
+        };
+
+        updateCounter();
+    }
+
+    // Intersection Observer for counter animation
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                stats.forEach(stat => {
+                    animateCounter(stat);
+                });
+                hasAnimated = true;
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+
+    // =====================================
+    // CONTACT FORM SUBMISSION
+    // =====================================
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', handleFormSubmit);
     }
 
-    // Add animation on scroll for cards
+    // =====================================
+    // SCROLL ANIMATIONS
+    // =====================================
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -121,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Observe elements for animation
     const animatedElements = document.querySelectorAll(
-        '.service-card, .project-card, .capability-item'
+        '.service-card, .project-card, .capability-item, .testimonial-card, .cert-card'
     );
 
     animatedElements.forEach(el => {
@@ -130,9 +182,70 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    // =====================================
+    // BACK TO TOP BUTTON
+    // =====================================
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // =====================================
+    // LIGHTBOX FOR PROJECT IMAGES
+    // =====================================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            if (img) {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
 });
 
-// Handle Contact Form Submission
+// =====================================
+// CONTACT FORM HANDLER
+// =====================================
 function handleFormSubmit(e) {
     e.preventDefault();
 
@@ -173,13 +286,17 @@ function handleFormSubmit(e) {
     messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// Email validation
+// =====================================
+// EMAIL VALIDATION
+// =====================================
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Show form message
+// =====================================
+// SHOW FORM MESSAGE
+// =====================================
 function showMessage(text, type) {
     const messageDiv = document.getElementById('form-message');
     if (!messageDiv) return;
@@ -196,7 +313,9 @@ function showMessage(text, type) {
     }
 }
 
-// Add navbar shadow on scroll
+// =====================================
+// ENHANCED NAVBAR ON SCROLL
+// =====================================
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -206,12 +325,38 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Parallax effect for hero section (optional)
+// =====================================
+// PARALLAX EFFECT FOR HERO (OPTIONAL)
+// =====================================
+let ticking = false;
+
 window.addEventListener('scroll', function() {
     const hero = document.querySelector('.hero');
-    if (hero) {
-        const scrolled = window.pageYOffset;
-        const parallax = scrolled * 0.5;
-        hero.style.backgroundPositionY = parallax + 'px';
+    if (hero && !ticking) {
+        window.requestAnimationFrame(function() {
+            const scrolled = window.pageYOffset;
+            const parallax = scrolled * 0.5;
+            hero.style.backgroundPositionY = parallax + 'px';
+            ticking = false;
+        });
+        ticking = true;
     }
 });
+
+// =====================================
+// PERFORMANCE: LAZY LOADING OBSERVER
+// =====================================
+if ('IntersectionObserver' in window) {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.src; // Trigger loading
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+}
