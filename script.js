@@ -1,4 +1,57 @@
 // =====================================
+// PRIORITY 1: SCROLL PROGRESS BAR
+// =====================================
+const scrollProgress = document.createElement('div');
+scrollProgress.className = 'scroll-progress';
+document.body.appendChild(scrollProgress);
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
+});
+
+// =====================================
+// PRIORITY 1: PARTICLE BACKGROUND
+// =====================================
+function createParticles() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    let particlesContainer = hero.querySelector('.particles-container');
+    if (!particlesContainer) {
+        particlesContainer = document.createElement('div');
+        particlesContainer.className = 'particles-container';
+        hero.insertBefore(particlesContainer, hero.firstChild);
+    }
+
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+
+        // Random positioning
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+
+        // Random animation delay and duration
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+
+        // Random size
+        const size = 2 + Math.random() * 4;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Call on load
+createParticles();
+
+// =====================================
 // MOBILE MENU TOGGLE
 // =====================================
 document.addEventListener('DOMContentLoaded', function() {
@@ -181,6 +234,91 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+    });
+
+    // =====================================
+    // PRIORITY 1: CLIP-PATH REVEAL ANIMATIONS
+    // =====================================
+    const clipRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    // Add clip-reveal class to section titles
+    document.querySelectorAll('.section-title, .section-heading').forEach(el => {
+        el.classList.add('clip-reveal');
+        clipRevealObserver.observe(el);
+    });
+
+    // =====================================
+    // PRIORITY 1: 3D TILT EFFECT ON CARDS
+    // =====================================
+    const tiltCards = document.querySelectorAll('.service-card, .cert-card, .stat-card, .testimonial-card');
+
+    tiltCards.forEach(card => {
+        card.classList.add('tilt-card');
+
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+    });
+
+    // =====================================
+    // PRIORITY 1: MAGNETIC BUTTON EFFECT
+    // =====================================
+    const magneticButtons = document.querySelectorAll('.btn, .btn-primary, .btn-secondary');
+
+    magneticButtons.forEach(button => {
+        button.classList.add('magnetic-btn', 'btn-ripple');
+
+        button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            const moveX = x * 0.3;
+            const moveY = y * 0.3;
+
+            button.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translate(0, 0) scale(1)';
+        });
+    });
+
+    // =====================================
+    // PRIORITY 1: ADD GRADIENT TEXT TO HEADINGS
+    // =====================================
+    // Add gradient effect to main hero title
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle && !heroTitle.classList.contains('fade-in')) {
+        heroTitle.classList.add('gradient-text');
+    }
+
+    // Add gradient to every other section title for visual variety
+    const sectionTitles = document.querySelectorAll('.section-title');
+    sectionTitles.forEach((title, index) => {
+        if (index % 2 === 0) { // Every other title gets gradient
+            title.classList.add('gradient-text');
+        }
     });
 
     // =====================================
