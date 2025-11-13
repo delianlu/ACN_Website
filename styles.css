@@ -49,7 +49,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.7;
     color: var(--text-dark);
-    background-color: var(--bg-beige);
+    background-color: var(--bg-white);
     overflow-x: hidden;
 }
 
@@ -99,7 +99,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     border-bottom: none;
 }
 
@@ -118,7 +118,7 @@ img {
 }
 
 .logo img {
-    height: 50px;
+    height: 32px;
     width: auto;
 }
 
@@ -130,8 +130,8 @@ img {
 
 .nav-menu a {
     color: var(--text-white);
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 400;
+    font-size: 0.85rem;
     padding: 0.5rem 0;
     position: relative;
     text-transform: uppercase;
@@ -287,7 +287,7 @@ section {
 
 /* About Section */
 .about-section {
-    background-color: var(--bg-white);
+    background-color: var(--bg-beige);
     padding: 5rem 0;
 }
 
@@ -314,7 +314,7 @@ section {
 
 /* Services Section */
 .services-section {
-    background-color: var(--bg-light);
+    background-color: var(--bg-beige);
     padding: 5rem 0;
 }
 
@@ -374,7 +374,7 @@ section {
 
 /* Projects Section */
 .projects-section {
-    background-color: var(--bg-white);
+    background-color: var(--bg-beige);
     padding: 5rem 0;
 }
 
@@ -427,7 +427,7 @@ section {
 
 /* Contact Section */
 .contact-section {
-    background-color: var(--bg-light);
+    background-color: var(--bg-beige);
     padding: 5rem 0;
 }
 
@@ -1356,10 +1356,11 @@ a, button, .btn, .project-card, .service-card {
 
 /* Statistics Section */
 .stats-section {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    background-color: var(--bg-white);
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
+    display: none;
 }
 
 .stats-section::before {
@@ -1511,6 +1512,7 @@ a, button, .btn, .project-card, .service-card {
     background-color: var(--bg-white);
     padding: 5rem 0;
     position: relative;
+    display: none;
 }
 
 .testimonials-grid {
@@ -1623,6 +1625,7 @@ a, button, .btn, .project-card, .service-card {
 .certifications-section {
     background-color: var(--bg-light);
     padding: 5rem 0;
+    display: none;
 }
 
 .certifications-grid {
@@ -1915,7 +1918,7 @@ a, button, .btn, .project-card, .service-card {
     position: relative;
     height: 100px;
     overflow: hidden;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
