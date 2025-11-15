@@ -99,7 +99,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     border-bottom: none;
 }
 
@@ -181,14 +181,14 @@ img {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 85vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--dark-teal);
     color: var(--text-white);
     text-align: center;
-    padding: 4rem 0;
+    padding: 2rem 0;
     overflow: hidden;
 }
 
@@ -256,12 +256,12 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--primary-teal);
     letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
 }
 
 .section-title::after {
@@ -288,7 +288,7 @@ section {
 /* About Section */
 .about-section {
     background-color: var(--bg-beige);
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .about-grid {
@@ -315,14 +315,14 @@ section {
 /* Services Section */
 .services-section {
     background-color: var(--bg-beige);
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .service-card {
@@ -375,12 +375,12 @@ section {
 /* Projects Section */
 .projects-section {
     background-color: var(--bg-beige);
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .projects-intro {
     max-width: 900px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1.5rem;
     text-align: center;
 }
 
@@ -394,7 +394,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .project-card {
@@ -428,14 +428,14 @@ section {
 /* Contact Section */
 .contact-section {
     background-color: var(--bg-beige);
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 4rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .contact-subheading {
@@ -597,7 +597,7 @@ section {
 .footer {
     background-color: var(--dark-blue);
     color: var(--text-white);
-    padding: 3rem 0 1.5rem;
+    padding: 2rem 0 1rem;
 }
 
 .footer-content {
@@ -670,7 +670,7 @@ section {
 }
 
 .about-page-content {
-    padding: 3rem 0;
+    padding: 2rem 0;
     background-color: var(--bg-white);
 }
 
@@ -689,14 +689,14 @@ section {
 /* Capabilities Section */
 .capabilities-section {
     background-color: var(--bg-light);
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .capabilities-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .capability-item {
@@ -2331,21 +2331,21 @@ a, button, .btn, .project-card, .service-card {
 
 .sustainability-content {
     background-color: var(--bg-beige);
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .page-title {
     font-size: 3rem;
     color: var(--primary-teal);
     text-align: left;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
 }
 
 .sustainability-grid {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .sustainability-text {
@@ -2360,7 +2360,7 @@ a, button, .btn, .project-card, .service-card {
 }
 
 .sustainability-section {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .sustainability-section h2 {
@@ -2373,7 +2373,7 @@ a, button, .btn, .project-card, .service-card {
 .content-with-image {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     align-items: start;
 }
 
