@@ -2324,3 +2324,113 @@ a, button, .btn, .project-card, .service-card {
         animation: none;
     }
 }
+
+/* ==================================
+   SUSTAINABILITY PAGE STYLES
+   ================================== */
+
+.sustainability-content {
+    background-color: var(--bg-beige);
+    padding: 4rem 0;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: var(--primary-teal);
+    text-align: left;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.sustainability-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.sustainability-text {
+    max-width: 600px;
+}
+
+.sustainability-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+}
+
+.sustainability-section {
+    margin-bottom: 3rem;
+}
+
+.sustainability-section h2 {
+    font-size: 1.75rem;
+    color: var(--primary-teal);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.content-with-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.content-with-image.reverse {
+    direction: rtl;
+}
+
+.content-with-image.reverse > * {
+    direction: ltr;
+}
+
+.text-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+.image-content {
+    width: 100%;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: var(--shadow-md);
+}
+
+.full-width-image {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.full-width-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Responsive for Sustainability Page */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .content-with-image {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .content-with-image.reverse {
+        direction: ltr;
+    }
+
+    .sustainability-text {
+        max-width: 100%;
+    }
+}
