@@ -249,19 +249,19 @@ img {
 
 /* Section Styles */
 section {
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--primary-teal);
     letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
 }
 
 .section-title::after {
@@ -288,7 +288,7 @@ section {
 /* About Section */
 .about-section {
     background-color: var(--bg-beige);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .about-grid {
@@ -315,14 +315,14 @@ section {
 /* Services Section */
 .services-section {
     background-color: var(--bg-beige);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .service-card {
@@ -375,12 +375,12 @@ section {
 /* Projects Section */
 .projects-section {
     background-color: var(--bg-beige);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .projects-intro {
     max-width: 900px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1rem;
     text-align: center;
 }
 
@@ -394,7 +394,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .project-card {
@@ -428,14 +428,14 @@ section {
 /* Contact Section */
 .contact-section {
     background-color: var(--bg-beige);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 4rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .contact-subheading {
